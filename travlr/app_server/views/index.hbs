@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+
+<p>Explore exciting travel destinations with Travlr Getaways.</p>
+
+<h2>Featured Trips</h2>
+
+{{#each trips}}
+<div class="trip-card">
+
+    <h3>{{this.name}}</h3>
+
+    <p>Length: {{this.length}}</p>
+
+    <p>Price: {{this.price}}</p>
+
+</div>
+{{/each}}
