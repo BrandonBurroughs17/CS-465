@@ -1,23 +1,43 @@
-<div id="background">
-    <div id="page">
+{{> header}}
 
-        <div id="contents">
+<div id="contents">
+    <div class="box">
+        <div>
+            <div class="body">
 
-            <div class="box">
-                <div>
-                    <div class="body">
+                <h1>Travel</h1>
 
-                        <h1>{{title}}</h1>
+                <ul id="sites">
+
+                    {{#each trips}}
+
+                    <li>
+
+                        <a href="/travel">
+                            <img src="{{this.image}}" alt="Img">
+                        </a>
+
+                        <h2>
+                            <a href="/travel">{{this.name}}</a>
+                        </h2>
 
                         <p>
-                            Browse travel destinations and available vacation packages.
+                            {{this.description}}
                         </p>
 
-                    </div>
-                </div>
+                        <p>
+                            {{this.details}}
+                        </p>
+
+                    </li>
+
+                    {{/each}}
+
+                </ul>
+
             </div>
-
         </div>
-
     </div>
 </div>
+
+{{> footer}}

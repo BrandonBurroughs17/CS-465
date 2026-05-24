@@ -1,21 +1,39 @@
+const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
-const hbs = require('hbs');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-const indexRouter = require('./app_server/routes/index');
+const hbs = require('express-handlebars');
+
+const indexRouter = require('./routes/index');
 
 const app = express();
 
-// View engine setup
+app.engine(
+    'hbs',
+    hbs.engine({
+        extname: 'hbs',
+        defaultLayout: 'main',
+        layoutsDir: path.join(__dirname, 'app_server/views/layouts'),
+        partialsDir: path.join(__dirname, 'app_server/views/partials')
+    })
+);
+
 app.set('views', path.join(__dirname, 'app_server/views'));
 app.set('view engine', 'hbs');
 
-// Static files
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Routes
 app.use('/', indexRouter);
 
-app.listen(3000, () => {
-    console.log('Server running on port 3000');
+app.use(function(req, res, next) {
+    next(createError(404));
 });
+
+module.exports = app;

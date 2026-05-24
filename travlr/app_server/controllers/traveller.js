@@ -1,3 +1,5 @@
+const trips = require('../../data/trips.json');
+
 const homepage = (req, res) => {
     res.render('index', {
         title: 'Travlr Getaways',
@@ -29,12 +31,41 @@ const about = (req, res) => {
 
 const travel = (req, res) => {
     res.render('travel', {
-        title: 'Travel Packages'
+        title: 'Travel',
+        trips
+    });
+};
+
+const rooms = (req, res) => {
+    res.render('about', {
+        title: 'Rooms'
+    });
+};
+
+const meals = (req, res) => {
+    res.render('about', {
+        title: 'Meals'
+    });
+};
+
+const news = (req, res) => {
+    res.render('about', {
+        title: 'News'
+    });
+};
+
+const contact = (req, res) => {
+    res.render('about', {
+        title: 'Contact'
     });
 };
 
 module.exports = {
     homepage,
     about,
-    travel
+    travel,
+    rooms,
+    meals,
+    news,
+    contact
 };
