@@ -1,22 +1,32 @@
 [
   {
+    "code": "GR001",
     "name": "Gale Reef",
+    "length": "7 Nights",
+    "start": "2026-06-15",
+    "resort": "Gale Reef Resort",
+    "perPerson": "$1299",
     "image": "/images/reef1.jpg",
-    "description": "Sed et augue lorem. In sit amet placerat arcu.",
-    "details": "Sed consequat libero ut turpis venenatis ut aliquam risus semper."
+    "description": "Experience the beauty of Gale Reef with crystal clear waters and relaxing beaches."
   },
-
   {
+    "code": "DR002",
     "name": "Dawson's Reef",
+    "length": "10 Nights",
+    "start": "2026-07-10",
+    "resort": "Dawson Resort",
+    "perPerson": "$1799",
     "image": "/images/reef2.jpg",
-    "description": "Integer magna leo, posuere et dignissim vitae.",
-    "details": "Morbi aliquet viverra metus eu consectetur."
+    "description": "Explore tropical adventures and unforgettable excursions at Dawson's Reef."
   },
-
   {
+    "code": "CR003",
     "name": "Claire's Reef",
+    "length": "5 Nights",
+    "start": "2026-08-05",
+    "resort": "Claire Beach Resort",
+    "perPerson": "$999",
     "image": "/images/reef3.jpg",
-    "description": "Donec sed felis risus. Nulla facilisi.",
-    "details": "Integer purus justo, egestas eu consectetur eu."
+    "description": "Relax and unwind with luxury accommodations and oceanfront views."
   }
 ]

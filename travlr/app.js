@@ -4,9 +4,12 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+require('./app_server/models/db');
+
 const hbs = require('express-handlebars');
 
 const indexRouter = require('./routes/index');
+const apiRouter = require('./app_server/routes/index');
 
 const app = express();
 
@@ -31,6 +34,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+
 
 app.use(function(req, res, next) {
     next(createError(404));
