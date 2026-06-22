@@ -1,11 +1,12 @@
 import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TripDataService } from '../services/trip-data';
+import { TripCard } from '../trip-card/trip-card';
 
 @Component({
   selector: 'app-trip-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TripCard],
   templateUrl: './trip-list.html',
   styleUrl: './trip-list.css'
 })

@@ -4,14 +4,6 @@
 
 @for (trip of trips; track trip.code) {
 
-  <h3>{{ trip.name }}</h3>
-
-  <p>Length: {{ trip.length }}</p>
-
-  <p>Resort: {{ trip.resort }}</p>
-
-  <p>Price: {{ trip.perPerson }}</p>
-
-  <hr>
+  <app-trip-card [trip]="trip"></app-trip-card>
 
 }

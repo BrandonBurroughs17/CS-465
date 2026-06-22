@@ -1,0 +1,33 @@
+<h2>Edit Trip</h2>
+
+<label>Code</label>
+<br>
+<input [(ngModel)]="trip.code">
+
+<br><br>
+
+<label>Name</label>
+<br>
+<input [(ngModel)]="trip.name">
+
+<br><br>
+
+<label>Length</label>
+<br>
+<input [(ngModel)]="trip.length">
+
+<br><br>
+
+<label>Resort</label>
+<br>
+<input [(ngModel)]="trip.resort">
+
+<br><br>
+
+<label>Price</label>
+<br>
+<input [(ngModel)]="trip.perPerson">
+
+<br><br>
+
+<button (click)="saveTrip()">Save</button>

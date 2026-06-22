@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-trip-card',
-  imports: [],
+  standalone: true,
   templateUrl: './trip-card.html',
-  styleUrl: './trip-card.css',
+  styleUrl: './trip-card.css'
 })
-export class TripCard {}
+export class TripCard {
+
+  @Input() trip: any;
+
+}
