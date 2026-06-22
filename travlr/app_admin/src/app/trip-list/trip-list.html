@@ -1,0 +1,17 @@
+<h2>Travlr Trips</h2>
+
+<p>Total Trips: {{ trips.length }}</p>
+
+@for (trip of trips; track trip.code) {
+
+  <h3>{{ trip.name }}</h3>
+
+  <p>Length: {{ trip.length }}</p>
+
+  <p>Resort: {{ trip.resort }}</p>
+
+  <p>Price: {{ trip.perPerson }}</p>
+
+  <hr>
+
+}
