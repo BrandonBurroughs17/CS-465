@@ -1,5 +1,6 @@
 import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { TripDataService } from '../services/trip-data';
 import { TripCard } from '../trip-card/trip-card';
 
@@ -19,13 +20,20 @@ export class TripList implements OnInit {
 
   ngOnInit(): void {
 
+    const token = localStorage.getItem('travlr-token');
+
+    if (!token) {
+      window.location.href = '/login';
+      return;
+    }
+
     this.tripDataService.getTrips().subscribe({
       next: (value: any[]) => {
         this.trips = value;
         this.cdr.detectChanges();
       },
       error: (err) => {
-        console.error(err);
+        console.error('Error retrieving trips:', err);
       }
     });
 
