@@ -1,9 +1,13 @@
-<h2>Travlr Trips</h2>
+<div class="container mt-3">
+  <h1>Travlr Getaways Admin!</h1>
 
-<p>Total Trips: {{ trips.length }}</p>
+  <button class="btn btn-info mb-3" routerLink="/add">
+    Add Trip
+  </button>
 
-@for (trip of trips; track trip.code) {
-
-  <app-trip-card [trip]="trip"></app-trip-card>
-
-}
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let trip of trips">
+      <app-trip-card [trip]="trip"></app-trip-card>
+    </div>
+  </div>
+</div>

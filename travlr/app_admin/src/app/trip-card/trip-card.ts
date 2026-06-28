@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-trip-card',
@@ -9,5 +10,12 @@ import { Component, Input } from '@angular/core';
 export class TripCard {
 
   @Input() trip: any;
+
+  private router = inject(Router);
+
+  editTrip(trip: any): void {
+    localStorage.setItem('tripCode', trip.code);
+    this.router.navigate(['/edit']);
+  }
 
 }
