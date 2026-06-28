@@ -1,11 +1,11 @@
 <div class="container mt-3">
-  <h2>Edit Trip</h2>
+  <h2>Add Trip</h2>
 
-  <form [formGroup]="editForm" (ngSubmit)="onSubmit()" *ngIf="editForm">
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
 
     <div class="form-group mb-2">
       <label>Code</label>
-      <input class="form-control" formControlName="code" readonly>
+      <input class="form-control" formControlName="code">
     </div>
 
     <div class="form-group mb-2">
@@ -44,7 +44,7 @@
     </div>
 
     <button type="submit" class="btn btn-info mt-2">
-      Save
+      Add Trip
     </button>
 
     <button type="button" class="btn btn-secondary mt-2 ms-2" routerLink="/">

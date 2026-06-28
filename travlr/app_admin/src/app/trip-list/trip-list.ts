@@ -32,7 +32,7 @@ export class TripList implements OnInit {
         this.trips = value;
         this.cdr.detectChanges();
       },
-      error: (err) => {
+      error: (err: any) => {
         console.error('Error retrieving trips:', err);
       }
     });

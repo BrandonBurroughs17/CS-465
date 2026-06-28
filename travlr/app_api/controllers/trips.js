@@ -15,8 +15,7 @@ const tripsList = async (req, res) => {
 const tripsFindByCode = async (req, res) => {
     try {
 
-        const trip = await Trip
-            .find({ code: req.params.tripCode });
+        const trip = await Trip.findOne({ code: req.params.tripCode });
 
         if (!trip || trip.length === 0) {
             return res.status(404).json({
